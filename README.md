@@ -77,3 +77,18 @@ https://github.com/K-vidya805/GRIDPULSE
 ---
 
 **GRIDPULSE – Predict Smartly, Prepare Early!**
+
+
+## Project Screenshots
+
+### 1. Home Page
+![GRIDPULSE Home Page](Screenshots/f1.png)
+
+### 2. Seven-Day Forecast Dashboard
+![GRIDPULSE Dashboard](Screenshots/f2.png)
+
+### 3. Demand Prediction Details
+![GRIDPULSE Prediction Details](Screenshots/f3.png)
+
+### 4. What-If Temperature Simulator
+![GRIDPULSE What-If Simulator](Screenshots/f4.png)

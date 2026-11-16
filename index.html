@@ -4,10 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>GRIDPULSE | Electricity Demand Forecasting</title>
-    <!-- v=999 forces the browser to load the brand new files -->
-    <link rel="stylesheet" href="style.css?v=999">
+    
+    <link rel="stylesheet" href="style.css">
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <script src="script.js?v=999" defer></script>
+    <script src="script.js" defer></script>
 </head>
 <body>
 
@@ -21,7 +21,7 @@
     </header>
 
     <main>
-        <!-- PAGE 1 -->
+        <!-- PAGE 1: LOCATION SELECTION -->
         <section id="locationPage" class="page">
             <div class="welcome">
                 <h1>Welcome to GRIDPULSE</h1>
@@ -30,6 +30,7 @@
 
             <div class="location-card">
                 <h2>Select Your Location</h2>
+
                 <label for="district">Select District</label>
                 <select id="district">
                     <option value="">Select District</option>
@@ -43,49 +44,58 @@
                 </select>
 
                 <label for="taluk">Select Taluk</label>
-                <select id="taluk">
+                <select id="taluk" disabled>
                     <option value="">Select District First</option>
                 </select>
 
                 <button type="button" id="continueButton">Continue →</button>
+
                 <p id="locationMessage"></p>
+
                 <small>Currently, forecasting is available only for Belagavi North.</small>
             </div>
         </section>
 
-        <!-- PAGE 2 -->
+        <!-- PAGE 2: SEVEN DAY FORECAST -->
         <section id="forecastPage" class="page hidden">
             <button type="button" class="back-button" id="backButton">← Change Location</button>
+
             <div class="page-heading">
                 <h1>7-Day Electricity Demand Forecast</h1>
                 <p id="selectedLocation">Belagavi District / Belagavi North</p>
                 <span>Select a day to view its detailed forecast.</span>
             </div>
+
             <div class="forecast-card">
                 <h2>Daily Predictions</h2>
                 <div id="weeklyForecast" class="daily-list"></div>
             </div>
+
             <p class="demo-note">Demo notice: Predictions use simulated future weather inputs and simulated demand data.</p>
         </section>
 
-        <!-- PAGE 3 -->
+        <!-- PAGE 3: DAILY FORECAST DETAILS -->
         <section id="dayPage" class="page hidden">
             <button type="button" class="back-button" id="forecastBackButton">← Back to 7-Day Forecast</button>
+
             <div class="page-heading">
                 <h1 id="dayTitle">Daily Forecast</h1>
                 <p id="daySubtitle">Belagavi North</p>
             </div>
+
             <div class="demand-summary">
                 <p>Predicted Electricity Demand</p>
                 <h2 id="dailyDemand">-- MW</h2>
                 <small id="weatherDescription">Simulated weather input</small>
             </div>
 
+            <!-- WHAT-IF SIMULATOR -->
             <div class="simulator-card">
                 <div class="card-header">
                     <div class="step-badge">6</div>
                     <h2>What-If Simulator</h2>
                 </div>
+
                 <div class="weather-info-box">
                     <div class="sun-icon">☀️</div>
                     <div>
@@ -93,23 +103,29 @@
                         <h3 class="highlight-red" id="simWeatherText">45°C, Sunny</h3>
                     </div>
                 </div>
+
                 <h3 class="chart-title">Predicted Electricity Demand</h3>
+
                 <div class="chart-container">
                     <canvas id="dailyChart"></canvas>
                 </div>
+
                 <div class="temperature-control">
                     <label for="temperatureSlider">Simulate Temperature:</label>
                     <input type="range" id="temperatureSlider" min="15" max="50" value="30">
                     <div class="temp-badge" id="temperatureValue">30°C</div>
                 </div>
+
                 <p id="simulationResult" class="sim-result"></p>
             </div>
 
+            <!-- ACTIONABLE ADVICE -->
             <div class="advice-card">
                 <div class="card-header">
                     <div class="step-badge">7</div>
                     <h2>Actionable Advice</h2>
                 </div>
+
                 <div class="alert-box">
                     <div class="alert-icon">⚠️</div>
                     <div class="alert-content">
@@ -117,13 +133,15 @@
                         <p><strong>Recommendation:</strong><br><span id="adviceText" class="highlight-red">Start backup power plant at 2:00 PM.</span></p>
                     </div>
                 </div>
+
                 <small>These are illustrative suggestions, not actual electricity grid operating instructions.</small>
             </div>
         </section>
     </main>
 
+    <!-- UPDATED FOOTER -->
     <footer>
-        GRIDPULSE | Smart Electricity Demand Forecasting<br>Academic Demonstration Project
+        GRIDPULSE | Smart Electricity Demand Forecasting
     </footer>
 </div>
 
